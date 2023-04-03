@@ -5,10 +5,10 @@ RSpec.describe "User Show Page", type: :feature do
     VCR.use_cassette("top_rated_movies_dashboard") do
       @results = MoviesFacade.new.top_rated_movies
 
-      @andra = User.create!(name: "Andra", email: "andra@turing.edu") 
-      @hady = User.create!(name: "Hady", email: "hady@turing.edu") 
-      @mike = User.create!(name: "Mike", email: "mky@turing.edu") 
-      @malena = User.create!(name: "Malena", email: "malena@tours.edu") 
+      @andra = User.create!(name: "Andra", email: "andra@turing.edu", password: "hady", password_confirmation: "hady") 
+      @hady = User.create!(name: "Hady", email: "hady@turing.edu", password: "hady", password_confirmation: "hady") 
+      @mike = User.create!(name: "Mike", email: "mky@turing.edu", password: "hady", password_confirmation: "hady") 
+      @malena = User.create!(name: "Malena", email: "malena@tours.edu", password: "hady", password_confirmation: "hady") 
 
       @halloween = Party.create!(name: "Halloween Party", user_id: @hady.id, movie_id: @results[2].movie_id, party_date: "2023/10/31", party_time: "10:30", duration: 123) 
 

@@ -1,0 +1,11 @@
+<% if flash[:error]%>
+  <%=flash[:error]%>
+<%end%>
+
+<%= form_with url: login_path, method: :post do |form| %>
+  <%= form.label :user_name, "Username:" %>
+  <%= form.text_field :user_name %>
+  <%= form.label :user_password, "Password:" %>
+  <%= form.password_field :user_password %>
+  <%= form.submit "Log In" %>
+<% end %>

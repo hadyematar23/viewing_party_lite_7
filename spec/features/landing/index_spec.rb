@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'landing page, index', type: :feature do
   describe "as a user" do
     before :each do
-      @user1 = User.create!(name: "Andra", email: "andra@turing.edu")
-      @user2 = User.create!(name: "Hady", email: "hady@turing.edu")
+      @user1 = User.create!(name: "Andra", email: "andra@turing.edu", password: "andrapassword", password_confirmation: "andrapassword")
+      @user2 = User.create!(name: "Hady", email: "hady@turing.edu", password: "hadypassword", password_confirmation: "hadypassword")
       visit "/"
     end
     describe "when visits landing page ('/'')" do

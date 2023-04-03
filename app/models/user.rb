@@ -13,4 +13,9 @@ class User < ApplicationRecord
   def self.find_host(user_id)
     find(user_id).name
   end
+
+  validates :email, uniqueness: true, presence: true
+  validates :name, presence: true
+  validates_presence_of :password_digest 
+  has_secure_password
 end

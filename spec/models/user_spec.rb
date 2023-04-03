@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu") }
-  let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu") }
+  let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu", password: "hady", password_confirmation: "hady") }
+  let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu", password: "hady", password_confirmation: "hady") }
 
   let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "2023/10/31", party_time: "10:30", duration: 123) }
   let!(:girls_night) { Party.create!(name: "Girl's Night", user_id: hady.id, party_date: "2023/10/31", party_time: "02:00", duration: 210) }
@@ -18,6 +18,13 @@ RSpec.describe User, type: :model do
   describe "relationships" do
     it { should have_many :user_parties }
     it { should have_many(:parties).through(:user_parties) }
+  end
+
+  describe "validations" do 
+    it { should validate_uniqueness_of(:email)}
+    it { should validate_presence_of(:password_digest)}
+    it { should have_secure_password}
+
   end
 
   describe "instance methods" do

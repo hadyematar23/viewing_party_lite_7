@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe Party, type: :model do
-  let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu") }
-  let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu") }
-  let!(:mike) { User.create!(name: "Mike", email: "mike@turing.edu") }
+  let!(:andra) { User.create!(name: "Andra", email: "andra@turing.edu", password: "andra", password_confirmation: "andra") }
+  let!(:hady) { User.create!(name: "Hady", email: "hady@turing.edu", password: "hady", password_confirmation: "hady") }
+  let!(:mike) { User.create!(name: "Mike", email: "mike@turing.edu", password: "mike", password_confirmation: "mike") }
 
 
   let!(:halloween) { Party.create!(name: "Halloween Party", user_id: andra.id, party_date: "Thu, 23 Mar 2023", party_time: "10:30", duration: 123) }

@@ -11,12 +11,10 @@ Rails.application.routes.draw do
     end
   end
   
-  get "/users/:id", to: "users#dashboard"
+  get "/users/:id", to: "users#dashboard", as: "user_dashboard"
   get "/users/:id/discover", to: "users#discover"
 
-  # get "/users/:user_id/movies", to: "user_movies#index"
-  # get "/users/:user_id/movies/:movie_id", to: "user_movies#show"
-
-  get "/register", to: "register#new"
-  post "/register", to: "register#create"
+  get "/register", controller: 'users', to: "users#new"
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login_user"
 end
