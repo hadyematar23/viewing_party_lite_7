@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :user_parties
   has_many :parties, through: :user_parties
+  enum role: {visitor: 0, registered_user: 1, admin: 2}
 
   def get_host_parties
     Party.where(user_id: self.id)

@@ -1,4 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'vcr'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -70,9 +71,12 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  config.hook_into :webmock
-  config.filter_sensitive_data('<MoviesDB_API_KEY>') { ENV["MoviesDB_API_KEY"] }
 
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.default_cassette_options = { :record => :once }
+  config.allow_http_connections_when_no_cassette = false
+  config.filter_sensitive_data('<MoviesDB_API_KEY>') { ENV["MoviesDB_API_KEY"] }
 end

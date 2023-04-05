@@ -1,15 +1,21 @@
 class PartiesController < ApplicationController
   def new 
-    @movie = MoviesFacade.new.get_all_movie_info(params[:movie_id])
-    @user = User.find(params[:user_id])
-    @all_users = User.all
+    if current_user 
+      @movie = MoviesFacade.new.get_all_movie_info(params[:movie_id])
+      @user = current_user
+      @all_users = User.all
+    else 
+      flash[:error] = "Must be logged in to register a viewing party"
+      redirect_to "/movies/#{params[:movie_id]}"
+    end 
+
   end
 
   def create
-    @user = User.find(params[:user_id])
     @movie = MoviesFacade.new.get_all_movie_info(params[:movie_id])
     @party = Party.new(party_params)
-
+    @party.user_id = current_user.id
+    
     if @party.duration >= @movie.raw_runtime
       @party.save
       if params[:invites].present?
@@ -18,10 +24,10 @@ class PartiesController < ApplicationController
         end
       end
       flash[:notice] = "Party successfully created"
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/dashboard"
     else
       flash[:notice] = "Duration is less than actual play time"
-      redirect_to "/users/#{@user.id}/movies/#{@movie.movie_id}/parties/new"
+      redirect_to "/movies/#{@movie.movie_id}/parties/new"
     end
   end
 

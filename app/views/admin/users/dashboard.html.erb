@@ -1,0 +1,7 @@
+Admin Dashboard
+
+<div id="email_addresses">
+  <%User.where(role: 1).each do |user|%>
+    <%=link_to "#{user.email}", "/admin/users/#{user.id}"%>
+  <%end%>
+</div>

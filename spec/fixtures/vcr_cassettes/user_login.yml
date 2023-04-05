@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1?api_key=<MoviesDB_API_KEY>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 05 Apr 2023 02:16:56 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25222
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 557a1378e00e81855a717a9d794ef206
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '25222'
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 3d3fd40be4e4bfdd1e1bebf86df63a76.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD55-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - E-ywhQPlQI0WqH9-xoOVQQgtGgT90Jx0ayf_EUxZqmG-XItmdj-1hw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Wed, 05 Apr 2023 02:16:56 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1/credits?api_key=<MoviesDB_API_KEY>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 05 Apr 2023 02:16:57 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22761
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - b8f0e26c9e7f292a8b0217ced90fad49
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '22761'
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 965a8e3a7cc0b0dabf91fcd2f78a55da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD55-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 86aIN9C-4t0V-1RWYIGW0mp2SufW4ezfvp3eL2NNeiG8q939tr5XdA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Wed, 05 Apr 2023 02:16:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1/reviews?api_key=<MoviesDB_API_KEY>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 05 Apr 2023 02:16:57 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25624
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 0b14c9ff606c10155ccf26a4eeeb21c1
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '25624'
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 7d30b02170e051a5fc315a8f4ba8c20c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD55-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 9YeVBAL8x4qB2vFhkLdpvvYwy9DMDWdFKJlIKOqa8TGUCwPLOdJxsQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Wed, 05 Apr 2023 02:16:57 GMT
+recorded_with: VCR 6.1.0

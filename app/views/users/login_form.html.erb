@@ -1,8 +1,8 @@
 <% if flash[:error]%>
   <%=flash[:error]%>
 <%end%>
-
-<%= form_with url: login_path, method: :post do |form| %>
+Login Page
+<%= form_with url: sessions_path, method: :post do |form| %>
   <%= form.label :user_name, "Username:" %>
   <%= form.text_field :user_name %>
   <%= form.label :user_password, "Password:" %>

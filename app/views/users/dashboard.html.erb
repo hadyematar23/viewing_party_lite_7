@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 
-<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<p><%= button_to "Discover Movies", "/dashboard/discover", method: :get %></p>
 
 
 <% if @invited_parties %>

@@ -9,7 +9,7 @@
 <%end%>
 
 <div id="viewing_party_form">
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie.movie_id}/parties", method: "post", local: true do |form| %>
+<%= form_with url: "/movies/#{@movie.movie_id}/parties", method: "post", local: true do |form| %>
   <%= form.label :name, "Name:" %>
   <%= form.text_field :name, required: true %>
 

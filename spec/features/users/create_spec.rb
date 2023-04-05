@@ -19,7 +19,7 @@ RSpec.describe 'create/register new user, create page', type: :feature do
         click_button("Register User")
         expect(User.last.name).to eq("Malena")
         expect(User.last.email).to eq("malena@gmail.com")
-        expect(current_path).to eq("/users/#{User.last.id}")
+        expect(current_path).to eq("/dashboard")
 
        end 
 

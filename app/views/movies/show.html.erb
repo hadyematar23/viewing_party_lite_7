@@ -1,0 +1,7 @@
+<%if flash[:error]%>
+  <%=flash[:error]%>
+<%end%>
+
+<%= link_to "Return to Discover Page", "/dashboard/discover" %>
+
+<%= link_to "Create Viewing Party", "/movies/#{@movie.movie_id}/parties/new" %>

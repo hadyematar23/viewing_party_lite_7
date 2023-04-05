@@ -1,4 +1,4 @@
-<%= link_to "Return to Discover Page", "/users/#{@user.id}/discover" %>
+<%= link_to "Return to Discover Page", "/dashboard/discover" %>
 
 <ol>
 
@@ -7,7 +7,7 @@
     <li>
     <div class ="movie">
       <div class ="name">
-      <%= link_to "#{movie.name}", "/users/#{@user.id}/movies/#{movie.movie_id}"  %> 
+      <%= link_to "#{movie.name}", "/movies/#{movie.movie_id}"  %> 
         </div> 
       <div class ="vote_average">
         <%=movie.vote_average%> </p>

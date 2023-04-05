@@ -1,5 +1,9 @@
-class UserMoviesController < ApplicationController
+class MoviesController < ApplicationController
   before_action :set_user
+
+  def show 
+    @movie = MoviesFacade.new.get_all_movie_info(params[:id])
+  end
 
   def index 
     if params[:search]
@@ -9,14 +13,9 @@ class UserMoviesController < ApplicationController
     end
   end
 
-  def show 
-    @movie = MoviesFacade.new.get_all_movie_info(params[:id])
-  end
-
   private 
 
   def set_user 
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
-
 end
